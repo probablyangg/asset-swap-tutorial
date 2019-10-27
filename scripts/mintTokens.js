@@ -11,7 +11,7 @@ web3.eth.accounts.wallet.add (privateKey2);
 const address1 = web3.eth.accounts.wallet[0].address;
 const address2 = web3.eth.accounts.wallet[1].address;
 
-const amount = confid.amount;
+const amount = config.amount;
 const tokenid = config.tokenid;
 
 const ChildERC20 = require ('../build/contracts/ChildERC20.json');
