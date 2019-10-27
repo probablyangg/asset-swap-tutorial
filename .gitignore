@@ -1,0 +1,5 @@
+node_modules
+build
+ganache
+contractAddresses
+package-lock.json
