@@ -1,0 +1,16 @@
+{
+  "name": "scripts",
+  "version": "1.0.0",
+  "description": "",
+  "main": "mintTokens.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "eth-sig-util": "^2.5.0",
+    "ethereumjs-utils": "^5.2.5",
+    "web3": "^1.2.2"
+  }
+}
