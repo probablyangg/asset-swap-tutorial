@@ -17,12 +17,12 @@ const NFT = new web3.eth.Contract (ChildERC721.abi, config.erc721);
 async function mint () {
     await CHE.methods.mint(config.amount).send({
         from: wallet[0].address,
-        gas: 6721975
+        gas: maxGas
     }).on('transactionHash', function(transactionHash){ console.log("erc20 mint\t" +  transactionHash) })
 
     await NFT.methods.mint(config.tokenid).send({
         from: wallet[1].address,
-        gas: 6721975
+        gas: maxGas
     }).on('transactionHash', function(transactionHash){ console.log("erc721 mint\t" +  transactionHash) })
 }
 
