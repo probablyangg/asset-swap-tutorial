@@ -51,5 +51,5 @@ Marketplace.methods.executeOrder(
     wallet[1].address
 ).send({
     from: wallet[1].address, // can be called from any address (as long as the signatures are authentic)
-    gas: 6721975
+    gas: maxGas
 }).on('transactionHash', function(transactionHash){ console.log("swap tx - \t" +  transactionHash) })
