@@ -3,3 +3,5 @@ build
 ganache
 contractAddresses
 package-lock.json
+.secret
+output

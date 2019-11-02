@@ -30,8 +30,10 @@ async function displayBalance () {
         console.log ("balance of: \t\t" + wallet[1].address + ":\t" + res + "\n")
     })
     console.log ("--- NFT "+config.tokenid+" owner ---")
-    await NFT.methods.ownerOf(config.tokenid).call().then( (res) => {
-        console.log ("owner of token id " + config.tokenid + ":\t" + res)
+    await NFT.methods.ownerOf(config.tokenid).call().then((res) => {
+        if (res) console.log ("owner of token id " + config.tokenid + ":\t" + res)
+    }, err => {
+        console.log ("error: the most probable cause is the token id has not been minted yet.")
     })
 }
 

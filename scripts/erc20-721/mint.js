@@ -18,12 +18,20 @@ async function mint () {
     await CHE.methods.mint(config.amount).send({
         from: wallet[0].address,
         gas: 6721975
-    }).on('transactionHash', function(transactionHash){ console.log("erc20 mint\t" +  transactionHash) })
+    }).then((receipt) => {
+        console.log ("erc20 mint\t" + receipt.transactionHash)
+    }, err => {
+        console.log (err)
+    })
 
     await NFT.methods.mint(config.tokenid).send({
         from: wallet[1].address,
         gas: 6721975
-    }).on('transactionHash', function(transactionHash){ console.log("erc721 mint\t" +  transactionHash) })
+    }).then((receipt) => {
+        console.log ("erc721 mint\t" + receipt.transactionHash)
+    }, err => {
+        console.log ("error: the most probable cause is the token in already minted. ")
+    })
 }
 
 mint ()
